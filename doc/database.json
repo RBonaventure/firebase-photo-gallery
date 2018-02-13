@@ -1,0 +1,29 @@
+{
+  "title" : "Dummy website",
+  "credit" : "© 2018, My Company Inc.",
+  "description" : "My dummy photo gallery website // Pictures come from Pexels.com",
+  "ga_id" : "XXX",
+  "images" : [ {
+    "href" : "https://www.pexels.com/photo/nature-sky-sunset-the-mountains-66997/",
+    "src" : "https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
+  }, {
+    "href" : "https://www.pexels.com/photo/beach-beautiful-bridge-carribean-449627/",
+    "src" : "https://images.pexels.com/photos/449627/pexels-photo-449627.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"
+  }, {
+    "href" : "https://www.pexels.com/photo/sky-sunset-beach-vacation-60217/",
+    "src" : "https://images.pexels.com/photos/60217/pexels-photo-60217.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"
+  }, {
+    "href" : "https://www.pexels.com/photo/beach-foam-landscape-nature-533923/",
+    "src" : "https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"
+  }, {
+    "href" : "https://www.pexels.com/photo/seaport-during-daytime-132037/",
+    "src" : "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"
+  }, {
+    "href" : "https://www.pexels.com/photo/brown-boat-on-body-of-water-nduring-day-time-176400/",
+    "src" : "https://images.pexels.com/photos/176400/pexels-photo-176400.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"
+  } ],
+  "socialmedia" : {
+    "facebook" : "https://www.facebook.com/pexels",
+    "instagram" : "https://www.instagram.com/pexelsphotos/"
+  }
+}

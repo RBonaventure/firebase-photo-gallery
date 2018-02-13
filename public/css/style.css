@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+/* ---- title ---- */
+.title {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.title a {
+  margin: 0 10px 0 10px;
+  text-decoration: none !important;
+}
+
+/* ---- body ---- */
+body {
+  position: relative;
+  font-family: sans-serif;
+}
+
+.gallery {
+  padding: 30px 0;
+  width: 250px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.img-c {
+  width: 250px;
+  height: 250px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
+}
+
+.img-c:hover .img-w {
+  transform: scale(1.08);
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
+}
+
+.img-w {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform ease-in-out 300ms;
+}
+
+.img-w img {
+  display: none;
+}
+
+@media only screen and (min-width: 500px) {
+
+  .gallery {
+    width: 500px;
+  }
+
+  .img-c {
+    width: 250px;
+    height: 250px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .gallery {
+    width: 750px;
+  }
+
+  .img-c {
+    width: 250px;
+    height: 250px;
+  }
+
+}
