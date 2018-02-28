@@ -13,7 +13,22 @@
   flex-direction: row; /* direction d'affichage horizontal */
 }
 
+#view-selector-container {
+  display: none;
+}
+
+.mdl-list {
+  overflow: scroll;
+  max-height: 100vh;
+}
+
+.chart {
+  display: flex; /* contexte sur le parent */
+  flex-direction: column; /* direction d'affichage verticale */
+}
+
 .center {
+  overflow: hidden;
   margin: 40px;
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */
