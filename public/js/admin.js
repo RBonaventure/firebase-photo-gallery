@@ -60,6 +60,10 @@ $(function() {
     firebase.auth().signOut();
   });
 
+  $("#open").click(function() {
+    window.location.href = "/";
+  });
+
   $("#refresh").click(function() {
     refresh();
   });
