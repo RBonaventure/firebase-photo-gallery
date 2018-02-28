@@ -18,3 +18,14 @@
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */
 }
+
+.mdl-button--fab {
+  position: absolute;
+  top: 100%; left: 100%;
+  transform: translate(-100%, -100%);
+  margin-bottom: 2Opx;
+}
+
+.mdl-list__item .mdl-list__item-secondary-content {
+  align-items: flex-start;
+}

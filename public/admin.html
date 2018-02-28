@@ -2,7 +2,7 @@
 <html>
     <head>
         
-        <title>Admin Page</title>
+        <title>Administration</title>
         
         <meta charset="UTF-8">
         <meta name="theme-color" content="#ffffff">
@@ -11,9 +11,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
-        <link rel="stylesheet" href="css/admin.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-red.min.css" />
+        <link rel="stylesheet" href="css/admin.css">
         
         <script src="/__/firebase/4.9.1/firebase-app.js"></script>
         <script src="/__/firebase/4.9.1/firebase-auth.js"></script>
@@ -29,37 +29,37 @@
         <!-- Simple header with scrollable tabs. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">Admin Page</span>
-                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Administration</span>
+                    <div class="mdl-layout-spacer"></div>
 
-                <!-- User name -->
-                <label id="user"></label>
+                    <!-- User name -->
+                    <label id="user"></label>
 
-                <!-- Refresh -->
-                <label id="refresh" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">refresh</i>
-                </label>
+                    <!-- Refresh -->
+                    <label id="refresh" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">refresh</i>
+                    </label>
 
-                <!-- Logout -->
-                <label id="logout" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">power_settings_new</i>
-                </label>
+                    <!-- Logout -->
+                    <label id="logout" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">power_settings_new</i>
+                    </label>
 
-            </div>
+                </div>
 
-            <!-- Tabs -->
-            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-                <a href="#text" class="mdl-layout__tab is-active">Texte</a>
-                <a href="#social" class="mdl-layout__tab">Réseaux Sociaux</a>
-                <a href="#analytics" class="mdl-layout__tab">Analytics</a>
-                <a href="#content" class="mdl-layout__tab">Content</a>
-                <a href="#backup" class="mdl-layout__tab">Backup</a>
-            </div>
+                <!-- Tabs -->
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                    <a href="#text" class="mdl-layout__tab is-active">Texte</a>
+                    <a href="#social" class="mdl-layout__tab">Réseaux Sociaux</a>
+                    <a href="#analytics" class="mdl-layout__tab">Analytics</a>
+                    <a href="#content" class="mdl-layout__tab">Content</a>
+                    <a href="#backup" class="mdl-layout__tab">Backup</a>
+                </div>
             
             </header>
-
+            
             <main class="mdl-layout__content center">
             
                 <section class="mdl-layout__tab-panel is-active" id="text">
@@ -141,8 +141,18 @@
 
                     </div>
                 </section>
-                <section class="mdl-layout__tab-panel" id="content">
-                    <div class="page-content"><!-- Your content goes here --></div>
+                <section class="mdl-layout__tab-panel center" id="content">
+                    <div class="page-content">
+                        <ul id="image-list" class="mdl-list">
+                            <!-- Content is generted dynamically, @see admin.js -->
+                        </ul>
+                    </div>
+                    
+                    <!-- Colored FAB button -->
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+                        <i class="material-icons">add</i>
+                    </button>
+        
                 </section>
                 <section class="mdl-layout__tab-panel" id="backup">
                     <div class="page-content"><!-- Your content goes here --></div>
@@ -151,6 +161,7 @@
                     <div class="mdl-snackbar__text"></div>
                     <button class="mdl-snackbar__action" type="button"></button>
                 </div>
+    
             </main>
         </div>
         
