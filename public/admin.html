@@ -25,95 +25,135 @@
     </head>
 
     <body>
-        <header class="mdl-layout__header">
+
+        <!-- Simple header with scrollable tabs. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
                 <span class="mdl-layout-title">Admin Page</span>
-                <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
 
+                <!-- User name -->
                 <label id="user"></label>
-                
+
+                <!-- Refresh -->
                 <label id="refresh" class="mdl-button mdl-js-button mdl-button--icon">
                     <i class="material-icons">refresh</i>
                 </label>
 
+                <!-- Logout -->
                 <label id="logout" class="mdl-button mdl-js-button mdl-button--icon">
                     <i class="material-icons">power_settings_new</i>
                 </label>
-            
+
             </div>
-        </header>
-    
-        <div class="center">
 
-            <div> <!-- Titre -->
-                <label class="mdl-textfield mdl-js-textfield" for="title">Titre</label>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="title">
-                </div>
-                <label id="update-title" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">check</i>
-                </label>
-            </div> <!-- Titre -->
-
-            <div> <!-- Description -->
-                <label class="mdl-textfield mdl-js-textfield" for="description">Description</label>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <textarea class="mdl-textfield__input" type="text" id="description"></textarea>
-                </div>
-        
-                <label id="update-description" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">check</i>
-                </label>
-            </div> <!-- Description -->
-
-            <div> <!-- Google Analytics Tracking ID -->
-                <label class="mdl-textfield mdl-js-textfield" for="ga">Google Analytics Tracking ID</label>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="ga">
-                </div>
-        
-                <label id="update-ga" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">check</i>
-                </label>
-            </div> <!-- Google Analytics Tracking ID -->
-
-            <div> <!-- Credit -->
-                <label class="mdl-textfield mdl-js-textfield" for="credit">Credit</label>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="credit">
-                </div>
-        
-                <label id="update-credit" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">check</i>
-                </label>
-            </div> <!-- Credit -->
-
-            <div class="horizontal"> <!-- Social Media -->
-                <div> <!-- Instagram -->
-                    <label class="mdl-textfield mdl-js-textfield" for="instagram">Instagram URL</label>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="instagram">
-                    </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#text" class="mdl-layout__tab is-active">Texte</a>
+                <a href="#social" class="mdl-layout__tab">Réseaux Sociaux</a>
+                <a href="#analytics" class="mdl-layout__tab">Analytics</a>
+                <a href="#content" class="mdl-layout__tab">Content</a>
+                <a href="#backup" class="mdl-layout__tab">Backup</a>
+            </div>
             
-                    <label id="update-insta" class="mdl-button mdl-js-button mdl-button--icon">
-                        <i class="material-icons">check</i>
-                    </label>
-                </div> <!-- Instagram -->
-                <div> <!-- Facebook -->
-                    <label class="mdl-textfield mdl-js-textfield" for="facebook">Facebook URL</label>
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="facebook">
-                    </div>
-            
-                    <label id="update-fb" class="mdl-button mdl-js-button mdl-button--icon">
-                        <i class="material-icons">check</i>
-                    </label>
-                </div> <!-- Facebook -->
-            </div> <!-- Social Media -->
+            </header>
 
+            <main class="mdl-layout__content center">
+            
+                <section class="mdl-layout__tab-panel is-active" id="text">
+                    <div class="page-content">
+
+                        <div> <!-- Titre -->
+                            <label class="mdl-textfield mdl-js-textfield" for="title">Titre</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="title">
+                            </div>
+                            <label id="update-title" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Titre -->
+
+                        <div> <!-- Description -->
+                            <label class="mdl-textfield mdl-js-textfield" for="description">Description</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea class="mdl-textfield__input" type="text" id="description"></textarea>
+                            </div>
+                    
+                            <label id="update-description" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Description -->
+
+                        <div> <!-- Credit -->
+                            <label class="mdl-textfield mdl-js-textfield" for="credit">Credit</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="credit">
+                            </div>
+                    
+                            <label id="update-credit" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Credit -->
+            
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="social">
+                    <div class="page-content">
+
+                        <div> <!-- Instagram -->
+                            <label class="mdl-textfield mdl-js-textfield" for="instagram">Instagram URL</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="instagram">
+                            </div>
+                    
+                            <label id="update-insta" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Instagram -->
+                        <div> <!-- Facebook -->
+                            <label class="mdl-textfield mdl-js-textfield" for="facebook">Facebook URL</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="facebook">
+                            </div>
+                    
+                            <label id="update-fb" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Facebook -->
+                        
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="analytics">
+                    <div class="page-content">
+                            
+                        <div> <!-- Google Analytics Tracking ID -->
+                            <label class="mdl-textfield mdl-js-textfield" for="ga">Google Analytics Tracking ID</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="ga">
+                            </div>
+                    
+                            <label id="update-ga" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Google Analytics Tracking ID -->
+
+                    </div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="content">
+                    <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+                <section class="mdl-layout__tab-panel" id="backup">
+                    <div class="page-content"><!-- Your content goes here --></div>
+                </section>
+                <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+            </main>
         </div>
+        
     </body>
 
     <script  src="js/admin.js"></script>
