@@ -11,7 +11,16 @@
         "source": "**",
         "function": "index"
       }
-    ]
+    ],
+    "redirects": [ {
+      "source" : "/admin",
+      "destination" : "/admin.html",
+      "type" : 301
+    }, {
+      "source" : "/login",
+      "destination" : "/login.html",
+      "type" : 301
+    } ]
   },
   "storage": {
     "rules": "storage.rules"
