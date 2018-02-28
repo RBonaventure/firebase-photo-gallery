@@ -40,17 +40,22 @@
                     <!-- Refresh -->
                     <label id="refresh" class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">refresh</i>
+                        <div class="mdl-tooltip" data-mdl-for="refresh"> Actualiser </div>
                     </label>
 
                     <!-- Open Web Site -->
                     <label id="open" class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">open_in_new</i>
+                        <div class="mdl-tooltip" data-mdl-for="open"> Afficher le site </div>
                     </label>
                         
                     <!-- Logout -->
                     <label id="logout" class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">power_settings_new</i>
+                        <div class="mdl-tooltip" data-mdl-for="logout"> Déconnexion </div>
                     </label>
+
+                    
 
                 </div>
 
@@ -154,10 +159,11 @@
                     </div>
                     
                     <!-- Colored FAB button -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+                    <button id="new" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
                         <i class="material-icons">add</i>
+                        
                     </button>
-        
+                    <div class="mdl-tooltip  mdl-tooltip--large	mdl-tooltip--left" data-mdl-for="new"> Nouveau contenu </div>
                 </section>
                 <section class="mdl-layout__tab-panel" id="backup">
                     <div class="page-content"><!-- Your content goes here --></div>
