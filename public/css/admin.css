@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+* {
+  font-family: 'Dosis', sans-serif;
+}
+
 #user {
   padding: 10px;
+}
+
+.horizontal {
+  display: flex; /* contexte sur le parent */
+  flex-direction: row; /* direction d'affichage horizontal */
+}
+
+.center {
+  margin: 40px;
+  display: flex; /* contexte sur le parent */
+  flex-direction: column; /* direction d'affichage verticale */
 }

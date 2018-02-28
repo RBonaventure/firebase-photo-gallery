@@ -32,15 +32,88 @@
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
 
-                <label id="user">test</label>
+                <label id="user"></label>
                 
+                <label id="refresh" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">refresh</i>
+                </label>
+
                 <label id="logout" class="mdl-button mdl-js-button mdl-button--icon">
                     <i class="material-icons">power_settings_new</i>
                 </label>
-
+            
             </div>
         </header>
     
+        <div class="center">
+
+            <div> <!-- Titre -->
+                <label class="mdl-textfield mdl-js-textfield" for="title">Titre</label>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="title">
+                </div>
+                <label id="update-title" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">check</i>
+                </label>
+            </div> <!-- Titre -->
+
+            <div> <!-- Description -->
+                <label class="mdl-textfield mdl-js-textfield" for="description">Description</label>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <textarea class="mdl-textfield__input" type="text" id="description"></textarea>
+                </div>
+        
+                <label id="update-description" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">check</i>
+                </label>
+            </div> <!-- Description -->
+
+            <div> <!-- Google Analytics Tracking ID -->
+                <label class="mdl-textfield mdl-js-textfield" for="ga">Google Analytics Tracking ID</label>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="ga">
+                </div>
+        
+                <label id="update-ga" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">check</i>
+                </label>
+            </div> <!-- Google Analytics Tracking ID -->
+
+            <div> <!-- Credit -->
+                <label class="mdl-textfield mdl-js-textfield" for="credit">Credit</label>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="credit">
+                </div>
+        
+                <label id="update-credit" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">check</i>
+                </label>
+            </div> <!-- Credit -->
+
+            <div class="horizontal"> <!-- Social Media -->
+                <div> <!-- Instagram -->
+                    <label class="mdl-textfield mdl-js-textfield" for="instagram">Instagram URL</label>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="instagram">
+                    </div>
+            
+                    <label id="update-insta" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">check</i>
+                    </label>
+                </div> <!-- Instagram -->
+                <div> <!-- Facebook -->
+                    <label class="mdl-textfield mdl-js-textfield" for="facebook">Facebook URL</label>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="facebook">
+                    </div>
+            
+                    <label id="update-fb" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">check</i>
+                    </label>
+                </div> <!-- Facebook -->
+            </div> <!-- Social Media -->
+
+        </div>
     </body>
 
     <script  src="js/admin.js"></script>
