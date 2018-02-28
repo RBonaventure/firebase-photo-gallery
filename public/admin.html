@@ -128,6 +128,13 @@
                             <label id="update-insta" class="mdl-button mdl-js-button mdl-button--icon">
                                 <i class="material-icons">check</i>
                             </label>
+
+                            <!-- Open Instagram -->
+                            <label id="instagram-open" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">open_in_new</i>
+                                <div class="mdl-tooltip" data-mdl-for="instagram-oopen"> Aller vers <br /> la page Instagram </div>
+                            </label>
+                            
                         </div> <!-- Instagram -->
                         <div> <!-- Facebook -->
                             <label class="mdl-textfield mdl-js-textfield" for="facebook">Facebook URL</label>
@@ -138,6 +145,13 @@
                             <label id="update-fb" class="mdl-button mdl-js-button mdl-button--icon">
                                 <i class="material-icons">check</i>
                             </label>
+
+                            <!-- Open Facebook -->
+                            <label id="facebook-open" class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="material-icons">open_in_new</i>
+                                    <div class="mdl-tooltip" data-mdl-for="facebook-oopen"> Aller vers <br /> la page Facebook </div>
+                                </label>
+                                
                         </div> <!-- Facebook -->
                         
                     </div>
@@ -168,20 +182,22 @@
                                 <i class="material-icons">check</i>
                             </label>
 
+                            <!-- Getting started with Google Analytics API -->
                             <label id="analytics-help" class="mdl-button mdl-js-button mdl-button--icon">
                                 <a href="https://developers.google.com/analytics/devguides/reporting/embed/v1/getting-started" target="_blank"> <i class="material-icons">help_outline</i> </a> 
                                 <div class="mdl-tooltip" data-mdl-for="analytics-help"> Où obtenir votre token <br> (Analytics API) </div>
                             </label>
-
-                            <label id="analytics-logout" class="mdl-button mdl-js-button mdl-button--icon">
-                                <a href="https://mail.google.com" target="_blank"> <i class="material-icons">power_settings_new</i> </a> 
-                                <div class="mdl-tooltip" data-mdl-for="analytics-logout"> Se déconnecter </div>
+                            
+                            <!-- Open Google Analytics Web Site -->
+                            <label id="analytics-open" class="mdl-button mdl-js-button mdl-button--icon">
+                                    <a href="https://analytics.google.com/analytics/web/" target="_blank"> <i class="material-icons">open_in_new</i> </a>
+                                <div class="mdl-tooltip" data-mdl-for="analytics-oopen"> Aller vers <br/> Google Analytics </div>
                             </label>
                             
                         </div> <!-- Google Analytics Tracking ID -->
 
                         <div id="embed-api-auth-container"></div>
-                        <div class="chart" id="analytics-chart">
+                        <div class="chart">
                             <div id="chart-container"></div>
                             <div id="view-selector-container"></div>
                         </div>

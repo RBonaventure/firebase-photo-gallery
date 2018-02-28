@@ -49,6 +49,11 @@ $(function() {
     }).catch(errorHandler);
   });
 
+  $("#instagram-open").click(function() {
+    const instagram = $("#instagram").val();
+    window.open(instagram, '_blank');
+  });
+
   $("#update-insta").click(function() {
     const instagram = $("#instagram").val();
     firebase.database().ref("/socialmedia").update({instagram: instagram}).then(result => {
@@ -56,6 +61,11 @@ $(function() {
     }).catch(errorHandler);
   });
 
+  $("#facebook-open").click(function() {
+    const facebook = $("#facebook").val();
+    window.open(facebook, '_blank');
+  });
+  
   $("#update-fb").click(function() {
     const facebook = $("#facebook").val();
     firebase.database().ref("/socialmedia").update({facebook: facebook}).then(result => {
