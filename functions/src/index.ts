@@ -4,9 +4,10 @@ import * as page from './html';
 
 admin.initializeApp(functions.config().firebase);
 const db = admin.database();
+const storage = admin.storage();
 
 let html = page.index;
-	
+
 export const index = functions.https.onRequest((request, response) => {
 
 	/**
@@ -47,4 +48,24 @@ export const index = functions.https.onRequest((request, response) => {
 		console.log("error : " + error);
 	});
     
+});
+
+export const storage_to_rtdb = functions.storage.object().onChange((event) => {
+	console.log(event);
+
+	const data = event.data;
+	let ref;
+
+	if(data.contentType === 'application/json') {
+		ref = db.ref(`backups/${data.generation}`);
+	} else {
+		ref = db.ref(`media/${data.generation}`);
+	}
+
+	if(data.resourceState === "exists") {
+		ref.update(data).then(function(snapshot) {});
+	} else {
+		ref.remove().then(function(snapshot) {});
+	}
+
 });
