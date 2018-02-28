@@ -16,7 +16,7 @@ export const index = functions.https.onRequest((request, response) => {
 	db.ref().once('value').then(function(snapshot) {
 
 		const content = snapshot.val();
-		const images = content.images;
+		const posts = content.posts;
 
 		/**
 		 * Set content
@@ -34,11 +34,11 @@ export const index = functions.https.onRequest((request, response) => {
 		const template = '<a class="img-w" href={{href}}> <img src="{{src}}" alt="" /> </a>';
 		let root = "";
 
-		for(var i = 0 ; i < images.length ; i++) {
-			var post = images[i];
+		for(var i = 0 ; i < posts.length ; i++) {
+			var post = posts[i];
 			var current = template.replace('{{href}}', post.href)
 								.replace('{{src}}', post.src)
-								.replace('{{date}}', post.date);
+								.replace('{{text}}', post.text);
 			root = current + root;
 		}
 		
@@ -51,16 +51,11 @@ export const index = functions.https.onRequest((request, response) => {
 });
 
 export const storage_to_rtdb = functions.storage.object().onChange((event) => {
-	console.log(event);
 
 	const data = event.data;
-	let ref;
 
-	if(data.contentType === 'application/json') {
-		ref = db.ref(`backups/${data.generation}`);
-	} else {
-		ref = db.ref(`media/${data.generation}`);
-	}
+	const path = data.contentType === 'application/json' ? "backups" : "media";
+	const ref = db.ref(`cms/${path}/${data.generation}`);
 
 	if(data.resourceState === "exists") {
 		ref.update(data).then(function(snapshot) {});
