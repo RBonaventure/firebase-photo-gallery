@@ -4,13 +4,13 @@
   font-family: 'Dosis', sans-serif;
 }
 
-#user {
-  padding: 10px;
-}
-
 .horizontal {
   display: flex; /* contexte sur le parent */
   flex-direction: row; /* direction d'affichage horizontal */
+}
+
+dialog {
+  width: 400px;
 }
 
 #view-selector-container {
@@ -28,7 +28,6 @@
 }
 
 .center {
-  overflow: hidden;
   margin: 40px;
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */
