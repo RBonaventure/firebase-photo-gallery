@@ -21,21 +21,28 @@ export const index = functions.https.onRequest((request, response) => {
 		/**
 		 * Set content
 		 */
-		html = html.replace("{{ga_id}}", content.ga_id);
-		html = html.replace("{{tagmanager_id}}", content.ga_id);
-		html = html.replace("{{header}}", content.title);
-		html = html.replace("{{title}}", content.title);
-		html = html.replace("{{description}}", content.description);
-		html = html.replace("{{credit}}", content.credit);
-
-		html = html.replace("{{instagram}}", content.socialmedia.instagram);
-		html = html.replace("{{facebook}}", content.socialmedia.facebook);
+		html = html.replace("{{ga_id}}"			, content.ga_id 				|| '');
+		html = html.replace("{{tagmanager_id}}"	, content.ga_id 				|| '');
+		html = html.replace("{{og:title}}"		, content.title 				|| '');
+		html = html.replace("{{og:url}}"		, content.url 					|| '');
+		html = html.replace("{{og:description}}", content.description 			|| '');
+		html = html.replace("{{header}}"		, content.title 				|| '');
+		html = html.replace("{{title}}"			, content.title 				|| '');
+		html = html.replace("{{description}}"	, content.description 			|| '');
+		html = html.replace("{{credit}}"		, content.credit 				|| '');
+		html = html.replace("{{instagram}}"		, content.socialmedia.instagram || '');
+		html = html.replace("{{facebook}}"		, content.socialmedia.facebook 	|| '');
 		
 		const template = '<a class="img-w" href={{href}}> <img src="{{src}}" alt="" /> </a>';
 		let root = "";
 
 		for(var i = 0 ; i < posts.length ; i++) {
 			var post = posts[i];
+
+			if(i == posts.length - 1) {
+				html = html.replace("{{og:image}}", post.src);
+			}
+
 			var current = template.replace('{{href}}', post.href)
 								.replace('{{src}}', post.src)
 								.replace('{{text}}', post.text);

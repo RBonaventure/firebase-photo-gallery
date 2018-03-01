@@ -3,7 +3,12 @@ const index = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta property="og:title" content="{{og:title}}" />
+  <meta property="og:description" content="{{og:description}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{og:url}}" />
+  <meta property="og:image" content="{{og:image}}" />
+
   <title>{{header}}</title>
   
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
