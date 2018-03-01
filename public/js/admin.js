@@ -178,7 +178,9 @@ let refresh = () => {
     list.empty();
     $.each(site.posts, function(i)
     {
-      const post = site.posts[i];
+      // Reverse posts order
+      const index = site.posts.length - (i+1);
+      const post = site.posts[index];
       var li = $('<div/>')
         .addClass('mdl-list__item mdl-list__item--two-line')
         .appendTo(list);

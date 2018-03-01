@@ -19,7 +19,7 @@
 
 .mdl-list {
   overflow: scroll;
-  max-height: 100vh;
+  max-height: 70vh;
 }
 
 .chart {
