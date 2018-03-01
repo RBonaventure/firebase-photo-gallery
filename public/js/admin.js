@@ -169,6 +169,7 @@ let refresh = () => {
   
   firebase.database().ref("/").once('value').then(data => {
     const site = data.val();
+    $("#url").val(site.url);
     $("#title").val(site.title);
     $("#description").val(site.description);
     $("#ga").val(site.analytics.ga_id);
