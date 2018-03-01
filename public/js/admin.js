@@ -21,31 +21,52 @@ $(function() {
     
   });
 
+  $("#update-url").click(function() {
+    const url = $("#url").val();
+    firebase.database().ref("/").update({url: url}).then(result => {
+      showSnackbar("L'URL du site web a été mise à jour avec succès.");
+    }).catch(errorHandler);
+  });
+
   $("#update-description").click(function() {
     const description = $("#description").val();
     firebase.database().ref("/").update({description: description}).then(result => {
-      showSnackbar('La description a été mise à jour ave succès.')
+      showSnackbar('La description a été mise à jour ave succès.');
     }).catch(errorHandler);
   });
 
   $("#update-ga").click(function() {
     const ga = $("#ga").val();
     firebase.database().ref("/analytics").update({ga_id: ga}).then(result => {
-      showSnackbar("L'ID Google Analytics a été mis à jour ave succès.")
+      showSnackbar("L'ID Google Analytics a été mis à jour ave succès.");
     }).catch(errorHandler);
   });
 
   $("#update-analytics-clientid").click(function() {
     const token = $("#token").val();
     firebase.database().ref("/analytics").update({ga_token: token}).then(result => {
-      showSnackbar("Le Client ID Google Analytics API a été mis à jour ave succès.")
+      showSnackbar("Le Client ID Google Analytics API a été mis à jour ave succès.");
     }).catch(errorHandler);
   });
 
   $("#update-credit").click(function() {
     const credit = $("#credit").val();
     firebase.database().ref("/").update({credit: credit}).then(result => {
-      showSnackbar('Les crédits ont été mis à jour ave succès.')
+      showSnackbar('Les crédits ont été mis à jour ave succès.');
+    }).catch(errorHandler);
+  });
+
+  $("#update-insta").click(function() {
+    const instagram = $("#instagram").val();
+    firebase.database().ref("/socialmedia").update({instagram: instagram}).then(result => {
+      showSnackbar('Le lien Instagram a été mis à jour ave succès.');
+    }).catch(errorHandler);
+  });
+
+  $("#update-fb").click(function() {
+    const facebook = $("#facebook").val();
+    firebase.database().ref("/socialmedia").update({facebook: facebook}).then(result => {
+      showSnackbar('Le lien Facebook a été mis à jour ave succès.');
     }).catch(errorHandler);
   });
 
@@ -54,25 +75,11 @@ $(function() {
     window.open(instagram, '_blank');
   });
 
-  $("#update-insta").click(function() {
-    const instagram = $("#instagram").val();
-    firebase.database().ref("/socialmedia").update({instagram: instagram}).then(result => {
-      showSnackbar('Le lien Instagram a été mis à jour ave succès.')
-    }).catch(errorHandler);
-  });
-
   $("#facebook-open").click(function() {
     const facebook = $("#facebook").val();
     window.open(facebook, '_blank');
   });
   
-  $("#update-fb").click(function() {
-    const facebook = $("#facebook").val();
-    firebase.database().ref("/socialmedia").update({facebook: facebook}).then(result => {
-      showSnackbar('Le lien Facebook a été mis à jour ave succès.')
-    }).catch(errorHandler);
-  });
-
   $("#logout").click(function() {
     firebase.auth().signOut();
   });
