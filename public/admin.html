@@ -10,16 +10,18 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="manifest.json">
         <link rel="stylesheet" href="css/material.deep_orange-red.min.css" />
+        <link rel="stylesheet" href="css/dialog-polyfill.css" />
         <link rel="stylesheet" href="css/admin.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        
+
         <script src="/__/firebase/4.9.1/firebase-app.js"></script>
         <script src="/__/firebase/4.9.1/firebase-auth.js"></script>
         <script src="/__/firebase/4.9.1/firebase-database.js"></script>
         <script src="/__/firebase/4.9.1/firebase-storage.js"></script>
         <script src="/__/firebase/init.js"></script>
-        <script src="js/material.min.js"></script>
-        <script src='js/jquery-3.3.1.min.js'></script>
+        <script src="js/libs/material.min.js"></script>
+        <script src='js/libs/jquery-3.3.1.min.js'></script>
+        <script src='js/libs/dialog-polyfill.js'></script>
 
         <script>
             (function(w,d,s,g,js,fs){
@@ -65,7 +67,7 @@
 
                 <!-- Tabs -->
                 <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-                    <a href="#text" class="mdl-layout__tab is-active">Texte</a>
+                    <a href="#text" class="mdl-layout__tab is-active">Site Web</a>
                     <a href="#social" class="mdl-layout__tab">Réseaux Sociaux</a>
                     <a href="#analytics" class="mdl-layout__tab">Analytics</a>
                     <a href="#content" class="mdl-layout__tab">Content</a>
@@ -221,12 +223,47 @@
                             <!-- Content is generted dynamically, @see admin.js -->
                         </ul>
                     </div>
-                    
+
+                    <!-- Dialog -->
+                    <dialog id="create-content-dialog" class="mdl-dialog dialog">
+                        <h4 class="mdl-dialog__title">Nouveau contenu</h4>
+                        <div class="mdl-dialog__content">
+                        
+                        <div> <!-- Choix de l'image -->
+                            <label class="mdl-textfield mdl-js-textfield" for="image">Image</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="file" accept="image/*" id="image">
+                            </div>
+                        </div> <!-- URL du site web -->
+                        
+                        <div> <!-- lien du post Instagram -->
+                            <label class="mdl-textfield mdl-js-textfield" for="instagram-url">Instagram</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="url" id="instagram-url">
+                                <span class="mdl-textfield__error">Le format est incorrect...</span>
+                            </div>
+                        </div> <!-- lien du post Instagram -->
+
+                        <div> <!-- lien du post Facebook -->
+                            <label class="mdl-textfield mdl-js-textfield" for="facebook-url">Facebook</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="url" id="facebook-url">
+                            </div>
+                        </div> <!-- lien du post Facebook -->
+
+                        </div>
+                        <div class="mdl-dialog__actions">
+                            <button id="create" class="mdl-button">Valider</button>
+                            <button id="close" class="mdl-button">Annuler</button>
+                        </div>
+                    </dialog>
+                    <!-- Dialog -->
+
                     <!-- Colored FAB button -->
-                    <button id="new" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+                    <button id="create-content" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
                         <i class="material-icons">add</i>
                     </button>
-                    <div class="mdl-tooltip  mdl-tooltip--large	mdl-tooltip--left" data-mdl-for="new"> Nouveau contenu </div>
+                    <div class="mdl-tooltip  mdl-tooltip--large	mdl-tooltip--left" data-mdl-for="create-content"> Nouveau contenu </div>
                 </section> <!-- Content Section -->
 
                 <!-- Backup Section -->
