@@ -9,17 +9,25 @@
   flex-direction: row; /* direction d'affichage horizontal */
 }
 
-dialog {
-  width: 400px;
+.mdl-dialog {
+  width: 60vw;
 }
 
 #view-selector-container {
   display: none;
 }
 
+.mdl-list__item {
+  border-bottom:1px solid #e2e2e2;
+  width: calc(100% * (1/2) - 10px - 1px)
+
+}
+
 .mdl-list {
   overflow: scroll;
   max-height: 70vh;
+  display: flex; /* contexte sur le parent */
+  flex-wrap:wrap;
 }
 
 .chart {

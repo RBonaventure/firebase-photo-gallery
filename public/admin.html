@@ -225,17 +225,25 @@
                     </div>
 
                     <!-- Dialog -->
-                    <dialog id="create-content-dialog" class="mdl-dialog dialog">
+                    <dialog id="create-content-dialog" class="mdl-dialog">
                         <h4 class="mdl-dialog__title">Nouveau contenu</h4>
                         <div class="mdl-dialog__content">
                         
                         <div> <!-- Choix de l'image -->
-                            <label class="mdl-textfield mdl-js-textfield" for="image">Image</label>
+                            <label class="mdl-textfield mdl-js-textfield" for="image-selector">Image</label>
                             <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="file" accept="image/*" id="image">
+                                <input class="mdl-textfield__input" type="file" accept="image/*" id="image-selector">
                             </div>
                         </div> <!-- URL du site web -->
                         
+                        <div> <!-- Description / Texte -->
+                            <label class="mdl-textfield mdl-js-textfield" for="description">Texte libre</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea class="mdl-textfield__input" type="text" id="content-text"></textarea>
+                            </div>
+                    
+                        </div> <!-- Description Texte -->
+
                         <div> <!-- lien du post Instagram -->
                             <label class="mdl-textfield mdl-js-textfield" for="instagram-url">Instagram</label>
                             <div class="mdl-textfield mdl-js-textfield">

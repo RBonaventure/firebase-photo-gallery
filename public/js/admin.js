@@ -40,34 +40,7 @@ let refresh = () => {
       enableAnalyticsChart(site.analytics.ga_token);
     }
     
-    const list = $("#contents-list");
-    list.empty();
-    $.each(site.posts, function(i)
-    {
-      // Reverse posts order
-      const index = site.posts.length - (i+1);
-      const post = site.posts[index];
-      var li = $('<div/>')
-        .addClass('mdl-list__item mdl-list__item--two-line')
-        .appendTo(list);
-      var span = $('<span/>')
-        .addClass('mdl-list__item-primary-content')
-        .appendTo(li);
-      var img = $('<img/>')
-        .attr('src', post.src)
-        .addClass('mdl-list__item-avatar')
-        .attr('width', "128px")
-        .attr('height', "128px")
-        .appendTo(span);
-      var href = $('<span/>')
-        .addClass('mdl-list__item-secondary-content')
-        .html(`<a href="${post.href}"> ${post.href} </a>`)
-        .appendTo(span);
-      var text = $('<span/>')
-        .html(post.text)
-        .appendTo(span);
-    });
-    
+    refreshContent();
   }).catch(errorHandler);
 
 }
