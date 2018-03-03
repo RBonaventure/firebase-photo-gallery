@@ -61,7 +61,7 @@ export const storage_to_rtdb = functions.storage.object().onChange((event) => {
 
 	const data = event.data;
 
-	const path = data.contentType === 'application/octet-stream' ? "backups" : "media";
+	const path = data.contentType === 'application/octet-stream' ? "backup" : "media";
 	const ref = db.ref(`cms/${path}/${data.generation}`);
 
 	if(data.resourceState === "exists") {
