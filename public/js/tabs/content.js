@@ -9,6 +9,7 @@ $("#close").click(function() {
 
 $("#create-content").click(function() {
     dialog.showModal();
+
 });
 
 $('#image-selector').change(function() {
@@ -22,6 +23,11 @@ $("#create").click(function() {
     const text = $("#content-text").val();
     const image = $("#image-selector")[0].files[0];
 
+    if(!text || !image) {
+        showSnackbar('Veuillez remplir le champs manquants.');
+        return;
+    }
+
     let content = {
         text: text,
         social: {
@@ -30,9 +36,10 @@ $("#create").click(function() {
         }
     };
 
-    console.log(content);
+    const now = new Date();
+    const filename = `${now.getTime()}-${image.name}`;
 
-    const imageRef = firebase.storage().ref("images").child(image.name);
+    const imageRef = firebase.storage().ref("images").child(filename);
     const uploadTask = imageRef.put(image);
 
     uploadTask.on('state_changed', function(snapshot) {
@@ -43,10 +50,15 @@ $("#create").click(function() {
     uploadTask.then(function(snapshot) {
         console.log(snapshot);
         content.src = snapshot.downloadURL;
-        firebase.database().ref("/posts").child(new Date().getTime()).set(content).catch(errorHandler);
+        firebase.database().ref("/posts").child(new Date().getTime()).set(content).then(() => {
+            $("#instagram-url").val("");
+            $("#facebook-url").val("");
+            $("#content-text").val("");
+            $("#image-selector").val("");
+            dialog.close();
+        }).catch(errorHandler);
     }).catch(errorHandler);
 });
-
 
 refreshContent = () => {
     firebase.database().ref("/posts").on('value', (snapshot) => {
