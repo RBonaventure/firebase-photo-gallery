@@ -36,17 +36,16 @@ export const index = functions.https.onRequest((request, response) => {
 		const template = '<a class="img-w" href={{href}}> <img src="{{src}}" alt="" /> </a>';
 		let root = "";
 
-		for(var i = 0 ; i < posts.length ; i++) {
-			var post = posts[i];
-
-			if(i == posts.length - 1) {
-				html = html.replace("{{og:image}}", post.src);
-			}
+		for(const key of Object.keys(posts).reverse()) {
+			const post = posts[key];
+		  
+			// Will only happen for the first content
+			html = html.replace("{{og:image}}", post.src);
 
 			var current = template.replace('{{href}}', post.href)
 								.replace('{{src}}', post.src)
 								.replace('{{text}}', post.text);
-			root = current + root;
+			root += current;
 		}
 		
 		response.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
