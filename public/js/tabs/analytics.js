@@ -12,6 +12,14 @@ $("#update-analytics-clientid").click(function() {
     }).catch(errorHandler);
 });
 
+$("#analytics-help").click(function() {
+    window.open('https://developers.google.com/analytics/devguides/reporting/embed/v1/getting-started', '_blank');
+});
+
+$("#analytics-open").click(function() {
+    window.open('https://analytics.google.com/analytics/web/', '_blank');
+});
+
 const enableAnalyticsChart = (token) => {
     
     gapi.analytics.ready(function() {
