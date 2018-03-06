@@ -17,24 +17,57 @@ $('#image-selector').change(function() {
     console.log(file);
 });
 
+$('#link').change(function() {
+    if($("#link").prop('checked')) {
+        $("#url-container").show();
+    } else {
+        $("#url-container").hide();
+    }
+});
+
+$('#link-type').change(function() {
+    if($("#link-type").prop('checked')) {
+        $("#link-type-label").html("Lien vers les réseaux sociaux");
+        $("#instagram-container").show();
+        $("#facebook-container").show();
+        $("#direct-link-container").hide();
+    } else {
+        $("#link-type-label").html("Lien direct");
+        $("#instagram-container").hide();
+        $("#facebook-container").hide();
+        $("#direct-link-container").show();
+    }
+});
+
 $("#create").click(function() {
     const instagram = $("#instagram-url").val();
     const facebook = $("#facebook-url").val();
+    const directLink = $("#direct-link-url").val();
     const text = $("#content-text").val();
     const image = $("#image-selector")[0].files[0];
+    
+    const hasLink = $("#link").prop('checked');
+    const socialLink = $("#link-type").prop('checked');
 
-    if(!text || !image) {
+    if(!text || !image || (hasLink && ((socialLink && (!instagram || !facebook)) || (!socialLink && !directLink))) ) {
         showSnackbar('Veuillez remplir le champs manquants.');
         return;
     }
 
     let content = {
-        text: text,
-        social: {
-            instagram: instagram,
-            facebook: facebook
-        }
+        text: text
     };
+
+    if(hasLink) {
+        if(socialLink) {
+            content.social = {
+                instagram: instagram,
+                facebook: facebook
+            };
+        } else {
+            content.href = directLink;
+        }
+    }
 
     const now = new Date();
     const filename = `${now.getTime()}-${image.name}`;
@@ -48,13 +81,14 @@ $("#create").click(function() {
     });
     
     uploadTask.then(function(snapshot) {
-        console.log(snapshot);
         content.src = snapshot.downloadURL;
         firebase.database().ref("/posts").child(new Date().getTime()).set(content).then(() => {
             $("#instagram-url").val("");
             $("#facebook-url").val("");
             $("#content-text").val("");
             $("#image-selector").val("");
+            $("#link").attr("checked", false);
+            $("#link-type").attr("checked", true);
             dialog.close();
         }).catch(errorHandler);
     }).catch(errorHandler);

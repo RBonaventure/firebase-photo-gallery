@@ -219,54 +219,78 @@
                 <!-- Content Section -->
                 <section class="mdl-layout__tab-panel" id="content">
                     <div class="page-content">
-                        <ul id="contents-list" class="mdl-list">
+                        <div id="contents-list" class="mdl-list">
                             <!-- Content is generted dynamically, @see admin.js -->
-                        </ul>
+                        </div>
                     </div>
 
                     <!-- Dialog -->
                     <dialog id="create-content-dialog" class="mdl-dialog">
                         <h4 class="mdl-dialog__title">Nouveau contenu</h4>
-                        <div class="mdl-dialog__content">
+                        <div class="mdl-dialog__content"> <!-- Dialog content -->
+                            
+                            <div> <!-- Choix de l'image -->
+                                <label class="mdl-textfield mdl-js-textfield" for="image-selector">Image</label>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="file" accept="image/*" id="image-selector">
+                                </div>
+                            </div> <!-- Choix de l'image -->
+                            
+                            <div> <!-- Description -->
+                                <label class="mdl-textfield mdl-js-textfield" for="content-text">Texte libre</label>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" id="content-text"></textarea>
+                                </div>
                         
-                        <div> <!-- Choix de l'image -->
-                            <label class="mdl-textfield mdl-js-textfield" for="image-selector">Image</label>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="file" accept="image/*" id="image-selector">
-                            </div>
-                        </div> <!-- URL du site web -->
-                        
-                        <div> <!-- Description / Texte -->
-                            <label class="mdl-textfield mdl-js-textfield" for="description">Texte libre</label>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <textarea class="mdl-textfield__input" type="text" id="content-text"></textarea>
-                            </div>
-                    
-                        </div> <!-- Description Texte -->
+                            </div> <!-- Description -->
+                            
+                            <!-- Add a redirection link ? -->
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="link">
+                                <input type="checkbox" id="link" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Ajouter un lien ?</span>
+                            </label> <!-- Add a redirection link ? -->
 
-                        <div> <!-- Lien du post Instagram -->
-                            <label class="mdl-textfield mdl-js-textfield" for="instagram-url">Instagram</label>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="url" id="instagram-url">
-                                <span class="mdl-textfield__error">Le format est incorrect...</span>
+                            <div id="url-container">
+                            
+                                <!-- URL vs Social Media -->
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="link-type">
+                                    <input type="checkbox" id="link-type" class="mdl-switch__input" checked>
+                                    <span id="link-type-label" class="mdl-switch__label">Lien vers les réseaux sociaux</span>
+                                </label> <!-- URL vs Social Media -->
+    
+                                <div id="direct-link-container"> <!-- Lien direct -->
+                                    
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <label class="mdl-textfield mdl-js-textfield" for="direct-link-url">Redirection vers</label>
+                                        <input class="mdl-textfield__input" type="url" id="direct-link-url">
+                                        <span class="mdl-textfield__error">Le format est incorrect...</span>
+                                    </div>
+                                </div> <!-- Lien direct -->
+    
+                                <div id="instagram-container"> <!-- Lien du post Instagram -->
+                                    <label class="mdl-textfield mdl-js-textfield" for="instagram-url">Instagram</label>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="url" id="instagram-url">
+                                        <span class="mdl-textfield__error">Le format est incorrect...</span>
+                                    </div>
+                                </div> <!-- Lien du post Instagram -->
+    
+                                <div id="facebook-container"> <!-- Lien du post Facebook -->
+                                    <label class="mdl-textfield mdl-js-textfield" for="facebook-url">Facebook</label>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="url" id="facebook-url">
+                                        <span class="mdl-textfield__error">Le format est incorrect...</span>
+                                    </div>
+                                </div> <!-- Lien du post Facebook -->
+    
                             </div>
-                        </div> <!-- Lien du post Instagram -->
-
-                        <div> <!-- Lien du post Facebook -->
-                            <label class="mdl-textfield mdl-js-textfield" for="facebook-url">Facebook</label>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="url" id="facebook-url">
-                                <span class="mdl-textfield__error">Le format est incorrect...</span>
-                            </div>
-                        </div> <!-- Lien du post Facebook -->
-
-                        </div>
+                            
+                        </div> <!-- Dialog content -->
                         <div class="mdl-dialog__actions">
                             <button id="create" class="mdl-button">Valider</button>
                             <button id="close" class="mdl-button">Annuler</button>
                         </div>
-                    </dialog>
-                    <!-- Dialog -->
+                    </dialog> <!-- Dialog -->
 
                     <!-- Colored FAB button -->
                     <button id="create-content" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">

@@ -9,6 +9,14 @@
   flex-direction: row; /* direction d'affichage horizontal */
 }
 
+#url-container {
+  display: none;
+}
+
+#direct-link-container {
+  display: none;
+}
+
 .mdl-dialog {
   width: 60vw;
 }
@@ -27,7 +35,7 @@
   overflow: scroll;
   max-height: 70vh;
   display: flex; /* contexte sur le parent */
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 .chart {
