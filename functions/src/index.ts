@@ -56,13 +56,13 @@ export const index = functions.https.onRequest((request, response) => {
     
 });
 
-export const storage_to_rtdb = functions.storage.object().onFinalize((object, context) => {
+export const storageOnFinalize = functions.storage.object().onFinalize((object, context) => {
 	const path = object.contentType === 'application/octet-stream' ? "backup" : "media";
 	const ref = db.ref(`cms/${path}/${object.generation}`);
 	ref.update(object).then(function(snapshot) {});
 });
 
-export const storage_to_rtdb_remove = functions.storage.object().onDelete((object, context) => {
+export const storageOnDelete = functions.storage.object().onDelete((object, context) => {
 	const path = object.contentType === 'application/octet-stream' ? "backup" : "media";
 	const ref = db.ref(`cms/${path}/${object.generation}`);
 	ref.remove().then(function(snapshot) {});
