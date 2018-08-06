@@ -59,3 +59,9 @@
 .mdl-list__item .mdl-list__item-secondary-content {
   align-items: flex-start;
 }
+
+.dragging {
+  background-color: white;
+  outline: 2px dashed black;
+  outline-offset: -10px;
+}

@@ -5,5 +5,5 @@ $(function() {
     const imgSrc = $(this).find("img").attr("src");
     $(this).css('background-image', 'url(' + imgSrc + ')');
   })
-  
+
 })

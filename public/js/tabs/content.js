@@ -125,31 +125,17 @@ refreshContent = () => {
             if(post.social) {
 
                 if(!post.social.facebook.empty) {
-                    var facebook = $('<i/>')
-                        .addClass('fab')
-                        .addClass('fa-facebook-square')
-                        .addClass('mdl-list__item-secondary-action')
-                        .css('width', '24px')
-                        .css('height', '24px')
+                    var facebook = $('<a/>')
+                        .attr('href', post.social.facebook)
+                        .html('<i id="fb" style="color: black; width: 24px; height: 24px;" class="fab fa-facebook-square mdl-list__item-secondary-action"></i>')
                         .appendTo(item);
-                    facebook.click(function() {
-                        window.open(post.social.facebook, '_blank');
-                    });
                 }
                 
                 if(!post.social.instagram.empty) {
-                    var instagram = $('<i/>')
-                        .addClass('fab')
-                        .addClass('fa-instagram')
-                        .addClass('material-icons')
-                        .addClass('mdl-list__item-secondary-action')
-                        .attr('id', 'insta')
-                        .css('width', '24px')
-                        .css('height', '24px')
+                    var instagram = $('<a/>')
+                        .attr('href', post.social.instagram)
+                        .html('<i id="fb" style="color: black; width: 24px; height: 24px;" class="fab fa-instagram mdl-list__item-secondary-action"></i>')
                         .appendTo(item);
-                    $("#insta").click(function() {
-                        window.open(post.social.instagram, '_blank');
-                    });
                 }
                 
             } else if (post.href && !post.href.empty) {
@@ -187,6 +173,7 @@ refreshContent = () => {
 deletePostByID = (id) => {
     firebase.database().ref(`/posts/${id}`).remove().then(function() {
         console.log(`${id} was deleted.`);
+        showSnackbar("Le post a été supprimé ave succès !");
     }).catch(errorHandler);
 }
 
