@@ -21,8 +21,8 @@ export const index = functions.https.onRequest((request, response) => {
 		/**
 		 * Set content
 		 */
-		html = html.replace("{{ga_id}}"			, content.ga_id 				|| '');
-		html = html.replace("{{tagmanager_id}}"	, content.ga_id 				|| '');
+		html = html.replace("{{ga_id}}"			, content.analytics.ga_id 		|| '');
+		html = html.replace("{{tagmanager_id}}"	, content.analytics.ga_id 		|| '');
 		html = html.replace("{{og:title}}"		, content.title 				|| '');
 		html = html.replace("{{og:url}}"		, content.url 					|| '');
 		html = html.replace("{{og:description}}", content.description 			|| '');
