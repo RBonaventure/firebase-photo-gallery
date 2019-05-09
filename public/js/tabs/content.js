@@ -81,16 +81,21 @@ $("#create").click(function() {
     });
     
     uploadTask.then(function(snapshot) {
-        content.src = snapshot.downloadURL;
-        firebase.database().ref("/posts").child(new Date().getTime()).set(content).then(() => {
-            $("#instagram-url").val("");
-            $("#facebook-url").val("");
-            $("#content-text").val("");
-            $("#image-selector").val("");
-            $("#link").attr("checked", false);
-            $("#link-type").attr("checked", true);
-            dialog.close();
-        }).catch(errorHandler);
+        imageRef.getDownloadURL().then(function(url) {
+            content.src = url;
+            firebase.database().ref("/posts").child(new Date().getTime()).set(content).then(() => {
+                $("#instagram-url").val("");
+                $("#facebook-url").val("");
+                $("#content-text").val("");
+                $("#image-selector").val("");
+                $("#link").attr("checked", false);
+                $("#link-type").attr("checked", true);
+                dialog.close();
+            }).catch(errorHandler);
+        }).catch(function(error) {
+            console.log(error);
+        });
+        
     }).catch(errorHandler);
 });
 
@@ -173,7 +178,7 @@ refreshContent = () => {
 deletePostByID = (id) => {
     firebase.database().ref(`/posts/${id}`).remove().then(function() {
         console.log(`${id} was deleted.`);
-        showSnackbar("Le post a été supprimé ave succès !");
+        showSnackbar("Le post a été supprimé avec succès !");
     }).catch(errorHandler);
 }
 
