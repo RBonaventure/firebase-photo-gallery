@@ -6,4 +6,5 @@ $(function() {
     $(this).css('background-image', 'url(' + imgSrc + ')');
   })
 
+  firebase.performance();
 })

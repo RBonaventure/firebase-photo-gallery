@@ -17,6 +17,10 @@ const index = `<!DOCTYPE html>
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="css/style.css">
   
+  <script src="/__/firebase/6.0.1/firebase-app.js"></script>
+  <script src="/__/firebase/6.0.1/firebase-performance.js"></script>
+  <script src="/__/firebase/init.js"></script>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{tagmanager_id}}"></script>
@@ -26,6 +30,7 @@ const index = `<!DOCTYPE html>
     gtag('js', new Date());
     gtag('config', '{{ga_id}}');
   </script>
+  
 </head>
 
 <body>
