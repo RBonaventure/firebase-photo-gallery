@@ -17,8 +17,8 @@ const index = `<!DOCTYPE html>
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="css/style.css">
   
-  <script src="/__/firebase/6.0.2/firebase-app.js"></script>
-  <script src="/__/firebase/6.0.2/firebase-performance.js"></script>
+  <script src="/__/firebase/6.4.2/firebase-app.js"></script>
+  <script src="/__/firebase/6.4.2/firebase-performance.js"></script>
   <script src="/__/firebase/init.js"></script>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
