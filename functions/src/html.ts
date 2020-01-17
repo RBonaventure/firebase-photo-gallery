@@ -105,12 +105,12 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
                 <p>{{description}}</p>
                 
                 <div class="scroll-icon">
-                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="assets/themes/fullwidth_video/scroll-icon.png" alt=""></a>
                 </div>
             </div>
         </div>
         <video autoplay="" loop="" muted>
-        	<source src="highway-loop.mp4" type="video/mp4" />
+        	<source src="{{video_url}}" type="video/mp4" />
         </video>
     </div>
 
