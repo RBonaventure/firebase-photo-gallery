@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="css/dialog-polyfill.css" />
         <link rel="stylesheet" href="css/admin.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
         <script src="/__/firebase/7.7.0/firebase-app.js"></script>
         <script src="/__/firebase/7.7.0/firebase-auth.js"></script>
@@ -92,6 +95,36 @@
                                 <i class="material-icons">check</i>
                             </label>
                         </div> <!-- URL du site web -->
+  
+                        <div> <!-- Thème du site web -->
+                            
+                            <label class="mdl-textfield mdl-js-textfield" for="url">Thème</label>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <div class="mdc-form-field">
+                                    <div class="mdc-radio">
+                                      <input class="mdc-radio__native-control" type="radio" id="theme-default" name="radios" checked>
+                                      <div class="mdc-radio__background">
+                                        <div class="mdc-radio__outer-circle"></div>
+                                        <div class="mdc-radio__inner-circle"></div>
+                                      </div>
+                                      <div class="mdc-radio__ripple"></div>
+                                    </div>
+                                    <label for="theme-default">Défaut</label>
+                                    <div class="mdc-radio">
+                                        <input class="mdc-radio__native-control" type="radio" id="theme-full-width-video" name="radios">
+                                        <div class="mdc-radio__background">
+                                          <div class="mdc-radio__outer-circle"></div>
+                                          <div class="mdc-radio__inner-circle"></div>
+                                        </div>
+                                        <div class="mdc-radio__ripple"></div>
+                                      </div>
+                                      <label for="theme-full-width-video">Vidéo plein écran</label>
+                                  </div>
+                            </div>
+                            <label id="update-theme" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">check</i>
+                            </label>
+                        </div> <!-- Thème du site web -->
 
                         <div> <!-- Titre -->
                             <label class="mdl-textfield mdl-js-textfield" for="title">Titre</label>

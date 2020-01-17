@@ -15,6 +15,15 @@ $("#update-url").click(function() {
     }).catch(errorHandler);
 });
 
+$("#update-theme").click(function() {
+    const fullwidth_video_theme = $("#theme-full-width-video")[0].checked;
+    const theme = fullwidth_video_theme ? 'fullwidth_video' : 'default';
+    console.log(theme);
+    firebase.database().ref("/").update({type: theme}).then(result => {
+        showSnackbar("Le thème du site web a été mise à jour avec succès.");
+    }).catch(errorHandler);
+});
+
 $("#update-description").click(function() {
     const description = $("#description").val();
     firebase.database().ref("/").update({description: description}).then(result => {

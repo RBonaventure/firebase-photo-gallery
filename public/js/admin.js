@@ -103,6 +103,9 @@ let refresh = () => {
     $("#instagram").val(site.socialmedia.instagram);
     $("#credit").val(site.credit);
 
+    $("#theme-default")[0].checked = site.type != 'fullwidth_video';
+    $("#theme-full-width-video")[0].checked = site.type == 'fullwidth_video';
+    
     if(site.analytics.ga_token) {
       enableAnalyticsChart(site.analytics.ga_token);
     }
