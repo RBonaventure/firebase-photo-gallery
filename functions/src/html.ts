@@ -68,9 +68,8 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
         <meta property="og:image" content="{{og:image}}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>{{title}}</title>
+        <title>{{header}}</title>
 
-        <meta name="description" content="{{description}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
