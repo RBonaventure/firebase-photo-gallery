@@ -50,6 +50,8 @@ export const index = functions.https.onRequest((request, response) => {
 
 			var current = template.replace('{{href}}', post.href)
 								.replace('{{src}}', post.src)
+								.replace('{{modal}}', post.src)
+								.replace('{{title}}', post.title || '')
 								.replace('{{text}}', post.text)
 								.replace('{{subtext}}', post.subtext);
 			root += current;

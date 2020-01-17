@@ -79,6 +79,7 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
 
         <link rel="stylesheet" href="css/themes/fullwidth_video/bootstrap.min.css">
         <link rel="stylesheet" href="css/themes/fullwidth_video/style.css">
+        <link rel="stylesheet" href="css/themes/fullwidth_video/light-box.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900">
         
         <script src="/__/firebase/7.7.0/firebase-app.js"></script>
@@ -130,6 +131,7 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     
+    <script src="js/themes/fullwidth_video/plugin.js"></script>
     <script src="js/themes/fullwidth_video/index.js"></script>
     
 </body>
@@ -137,11 +139,11 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
 root: `
 <div class="col-md-4 col-sm-6">
   <div class="portfolio-item">
-      <a href="{{href}}">
+      <a href="{{modal}}" data-lightbox="image-1">
           <div class="hover-effect">
               <div class="hover-content">
-                  <h1>{{text}}</h1>
-                  <p>{{subtext}}</p>
+                  <h1>{{title}}</h1>
+                  <p>{{text}}</p>
               </div>
           </div>
           <div class="image">
