@@ -6,7 +6,7 @@ admin.initializeApp();
 const db = admin.database();
 
 const default_theme = themes.default_template;
-const fullwidth_video_theme = themes.default_template;
+const fullwidth_video_theme = themes.fullwidth_video_template;
 
 export const index = functions.https.onRequest((request, response) => {
 

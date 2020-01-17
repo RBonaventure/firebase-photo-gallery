@@ -54,7 +54,7 @@ const default_template = { html: `<!DOCTYPE html>
 </html>`,
 root: '<a class="img-w" href={{href}}> <img src="{{src}}" alt="" /> </a>'}
  
-const fullwidth_video = { html: `<!DOCTYPE html>
+const fullwidth_video_template = { html: `<!DOCTYPE html>
 <html lang="en">
     <head>
 
@@ -152,4 +152,4 @@ root: `
   </div>
 </div>`}
 
-export { default_template, fullwidth_video };
+export { default_template, fullwidth_video_template };
