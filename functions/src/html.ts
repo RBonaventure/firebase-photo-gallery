@@ -131,7 +131,7 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     
-    <script src="js/themes/fullwidth_video/plugin.js"></script>
+    <script src="js/themes/fullwidth_video/plugins.js"></script>
     <script src="js/themes/fullwidth_video/index.js"></script>
     
 </body>
