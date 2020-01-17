@@ -57,7 +57,7 @@ export const index = functions.https.onRequest((request, response) => {
 			root += current;
 		}
 		
-		response.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
+		//response.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
 		response.send(html.replace("{{root}}", root));
 	}).catch(error => {
 		console.log("error : " + error);
