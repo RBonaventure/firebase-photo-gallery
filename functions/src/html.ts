@@ -138,19 +138,21 @@ const fullwidth_video_template = { html: `<!DOCTYPE html>
 </html>`,
 root: `
 <div class="col-md-4 col-sm-6">
-  <div class="portfolio-item">
-      <a href="{{modal}}" data-lightbox="image-1">
-          <div class="hover-effect">
-              <div class="hover-content">
-                  <h1>{{title}}</h1>
-                  <p>{{text}}</p>
-              </div>
-          </div>
-          <div class="image">
-              <img src="{{src}}">
-          </div>
-      </a>
-  </div>
+    <div class="portfolio-item">
+        <a href="{{modal}}" data-lightbox="image-1">
+            <div class="thumb">
+                <div class="hover-effect">
+                    <div class="hover-content">
+                        <h1>{{title}}</h1>
+                        <p>{{text}}</p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="{{src}}">
+                </div>
+            </div>
+        </a>
+    </div>
 </div>`}
 
 export { default_template, fullwidth_video_template };
