@@ -1,12 +1,12 @@
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
-import * as page from './html';
+import * as themes from './html';
 
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 const db = admin.database();
-const storage = admin.storage();
 
-let html = page.index;
+const default_theme = themes.default_template;
+const fullwidth_video_theme = themes.default_template;
 
 export const index = functions.https.onRequest((request, response) => {
 
@@ -16,11 +16,18 @@ export const index = functions.https.onRequest((request, response) => {
 	db.ref().once('value').then(function(snapshot) {
 
 		const content = snapshot.val();
+		const type = content.type;
 		const posts = content.posts;
+		
+		const theme = type == 'fullwidth_video' ? fullwidth_video_theme : default_theme;
+		
+		let html = theme.html;
+		const template = theme.root;
 
 		/**
 		 * Set content
 		 */
+		html = html.replace("{{video_url}}"		, content.video.url		 		|| '');
 		html = html.replace("{{ga_id}}"			, content.analytics.ga_id 		|| '');
 		html = html.replace("{{tagmanager_id}}"	, content.analytics.ga_id 		|| '');
 		html = html.replace("{{og:title}}"		, content.title 				|| '');
@@ -33,7 +40,6 @@ export const index = functions.https.onRequest((request, response) => {
 		html = html.replace("{{instagram}}"		, content.socialmedia.instagram || '');
 		html = html.replace("{{facebook}}"		, content.socialmedia.facebook 	|| '');
 		
-		const template = '<a class="img-w" href={{href}}> <img src="{{src}}" alt="" /> </a>';
 		let root = "";
 
 		for(const key of Object.keys(posts).reverse()) {
@@ -44,7 +50,8 @@ export const index = functions.https.onRequest((request, response) => {
 
 			var current = template.replace('{{href}}', post.href)
 								.replace('{{src}}', post.src)
-								.replace('{{text}}', post.text);
+								.replace('{{text}}', post.text)
+								.replace('{{subtext}}', post.subtext);
 			root += current;
 		}
 		
